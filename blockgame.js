@@ -7,6 +7,10 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+document.addEventListener('touchstart', () => {
+    jump();
+});
+
 function jump() {
     if (!player.classList.contains('jump')) {
         player.classList.add('jump');
