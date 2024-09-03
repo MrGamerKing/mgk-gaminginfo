@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGK-GamingInfo | Game1</title>
+    <script type="text/javascript">
+       var name = prompt("What's Your Name?");
+    </script>
+    <link rel="stylesheet" href="blockgame.css">
+    <link rel="icon" href="WebLogo2.png">
+</head>
+<body>
+    <div class="game-container">
+        <div class="ground"></div>
+        <div id="player" class="player"></div>
+        <div class="obstacle" id="obstacle"></div> <!-- Single obstacle -->
+        <script>
+            document.write("Player = " +name)
+        </script>
+        <div id="score">Score: </div> <!-- Score display element -->
+        <div id="score_no">0</div> 
+    </div>
+    <div class="background" id="background"></div>
+    <br><br><br><br>
+    <a href="index.html">&nbsp&nbsp&nbsp<img src="quit.png" height="70px"> </a>
+    <script src="blockgame.js"></script>
+</body>
+</html>

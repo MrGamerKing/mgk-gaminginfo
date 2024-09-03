@@ -1,0 +1,94 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-image: url(game_back.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    border: 2px solid black;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -100% 0;
+    }
+}
+
+
+/* Adjusted Ground line */
+.ground {
+    position: absolute;
+    bottom: 50px; /* Move ground line 50px up from the bottom */
+    width: 100%;
+    height: 20px;
+    background-color: #654321; /* Brown color for ground */
+}
+
+.player {
+    position: absolute;
+    bottom: 70px; /* Adjust player's bottom to match the new ground position */
+    left: 50px; /* Horizontal position */
+    width: 50px;
+    height: 50px;
+    background-image: url(grass.png); /* Placeholder color */
+    background-size: cover;
+    transition: bottom 0.3s ease-out; /* Smooth transition */
+}
+
+@keyframes jump {
+    0% {
+        bottom: 70px; /* Match player's bottom */
+    }
+    50% {
+        bottom: 200px; /* Peak of the jump */
+    }
+    100% {
+        bottom: 70px; /* Back to the new ground level */
+    }
+}
+
+.player.jump {
+    animation: jump 0.6s ease-out; /* Jump animation */
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 70px; /* Adjust obstacle bottom to match the new ground position */
+    width: 50px;
+    height: 50px;
+    background-image: url(bedrock.png); /* Placeholder color */
+    background-size: cover;
+    animation: moveObstacle 3s infinite linear; /* Default animation duration */
+}
+
+@keyframes moveObstacle {
+    0% {
+        right: -50px; /* Start off-screen to the left */
+    }
+    100% {
+        right: 100%; /* Move off-screen to the right */
+    }
+}
+
+#score {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    font-size: 24px;
+    color: #000;
+}
+
+#score_no {
+    position: absolute;
+    top: 30px;
+    left: 90px;
+    font-size: 24px;
+    color: #000;
+}
